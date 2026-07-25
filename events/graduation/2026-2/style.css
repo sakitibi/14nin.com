@@ -1,0 +1,173 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    background:#d7dce4;
+    font-family:"Yu Gothic","YuGothic","Meiryo",sans-serif;
+    color:#333;
+    padding:20px;
+}
+
+/* A4 */
+.page{
+    width:210mm;
+    min-height:297mm;
+    margin:0 auto;
+    background:#fff;
+    padding:18mm;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+    display:flex;
+    flex-direction:column;
+}
+
+/* ヘッダー */
+.header{
+    text-align:center;
+    border-bottom:4px solid #2f5aa8;
+    padding-bottom:18px;
+    margin-bottom:28px;
+}
+
+.header h1{
+    font-size:36px;
+    color:#1f417b;
+    letter-spacing:3px;
+    margin-bottom:10px;
+}
+
+.header p{
+    font-size:18px;
+    color:#666;
+}
+
+/* 本文 */
+main{
+    flex:1;
+}
+
+/* カード */
+.card{
+    border:1px solid #d7d7d7;
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:24px;
+}
+
+.card h2{
+    background:#2f5aa8;
+    color:#fff;
+    padding:12px 18px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* テーブル */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#edf3fc;
+    color:#244b88;
+    font-size:16px;
+}
+
+th,
+td{
+    border:1px solid #d9d9d9;
+    padding:12px;
+    text-align:left;
+}
+
+tbody tr:nth-child(even){
+    background:#fafafa;
+}
+
+/* プログラム */
+
+.program{
+    padding:18px 45px 20px;
+}
+
+.program li{
+    margin:10px 0;
+    font-size:17px;
+    line-height:1.7;
+}
+
+/* フッター */
+
+.footer{
+    margin-top:20px;
+    border-top:2px solid #2f5aa8;
+    padding-top:12px;
+    text-align:center;
+    color:#777;
+    font-size:14px;
+}
+
+/* 印刷 */
+
+@page{
+    size:A4;
+    margin:10mm;
+}
+
+@media print{
+
+    body{
+        background:#fff;
+        padding:0;
+    }
+
+    .page{
+        width:100%;
+        min-height:auto;
+        box-shadow:none;
+        margin:0;
+        padding:15mm;
+    }
+
+    .card{
+        page-break-inside:avoid;
+    }
+
+    h1,
+    h2{
+        page-break-after:avoid;
+    }
+
+    table{
+        page-break-inside:avoid;
+    }
+
+}
+
+/* 門出の言葉 */
+
+.speech{
+    padding:24px 28px;
+    line-height:2.1;
+    font-size:17px;
+    text-align:justify;
+}
+
+.speech p{
+    margin-bottom:1.5em;
+    text-indent:2em;
+}
+
+.speech p:last-child{
+    margin-bottom:0;
+}
