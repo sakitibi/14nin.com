@@ -191,9 +191,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         history.replaceState(
-            { path: "https://sakitibi.github.io/13nin.com/staff_credits/" },
+            { path: "https://sakitibi.github.io/14nin.com/staff_credits/" },
             "",
-            "https://sakitibi.github.io/13nin.com/staff_credits/"
+            "https://sakitibi.github.io/14nin.com/staff_credits/"
         );
     } catch(e) {
         console.error("Error: ", e);

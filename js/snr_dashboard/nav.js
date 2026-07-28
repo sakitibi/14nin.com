@@ -64,11 +64,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const currentPath = window.location.pathname;
 
     const menuItems = [
-        { name: '<i class="fa-solid fa-house"></i> ダッシュボード', url: '/13nin.com/SKNewRoles/dashboard/' },
-        { name: '<i class="fa-solid fa-people-pants"></i> 役職構成', url: '/13nin.com/SKNewRoles/dashboard/game_config/role_config' },
-        { name: '<i class="fa-duotone fa-solid fa-wand-sparkles"></i> スキル設定', url: '/13nin.com/SKNewRoles/dashboard/game_config/skill_config' },
-        { name: '<i class="fa-solid fa-sack-dollar"></i> ショップ価格', url: '/13nin.com/SKNewRoles/dashboard/game_config/shop_config' },
-        { name: '<i class="fa-etch fa-solid fa-book-open"></i> スタッフクレジット', url: '/13nin.com/SKNewRoles/dashboard/credits' }
+        { name: '<i class="fa-solid fa-house"></i> ダッシュボード', url: '/14nin.com/SKNewRoles/dashboard/' },
+        { name: '<i class="fa-solid fa-people-pants"></i> 役職構成', url: '/14nin.com/SKNewRoles/dashboard/game_config/role_config' },
+        { name: '<i class="fa-duotone fa-solid fa-wand-sparkles"></i> スキル設定', url: '/14nin.com/SKNewRoles/dashboard/game_config/skill_config' },
+        { name: '<i class="fa-solid fa-sack-dollar"></i> ショップ価格', url: '/14nin.com/SKNewRoles/dashboard/game_config/shop_config' },
+        { name: '<i class="fa-etch fa-solid fa-book-open"></i> スタッフクレジット', url: '/14nin.com/SKNewRoles/dashboard/credits' }
     ];
 
     let navHtml = `<div class="logo">SKNewRoles2 ADMIN</div>`;
