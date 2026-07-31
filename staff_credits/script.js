@@ -20,7 +20,6 @@ export const showDetail = (staff) => {
 
     if (!staffDetail || !staffList) return;
 
-    // 前回のクラスが残らないよう一旦すべてリセット
     staffDetail.classList.remove('highlight-executive-detail', 'highlight-committee-detail');
     
     if (staff.dept.includes("部長")) {
