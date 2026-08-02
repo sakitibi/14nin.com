@@ -35,10 +35,18 @@ export default function renderVirtualList(filteredData) {
             li.classList.add('highlight-committee');
         }
 
+        if (staff.graduationed) {
+            li.classList.remove("highlight-executive");
+            li.classList.remove("highlight-committee");
+            li.classList.add('highlight-graduationed');
+        }
+
         li.style.height = `${ITEM_HEIGHT}px`;
         li.innerHTML = `
             <span>${staff.name}</span>
-            <span class="id-tag">${staff.id}</span>
+            <span class="id-tag">
+                ${staff.graduationed ? "G-" : ""}${staff.id}
+            </span>
         `;
         li.addEventListener('click', () => {
             showDetail(staff);
