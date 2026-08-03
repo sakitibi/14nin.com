@@ -2,7 +2,7 @@ import { showDetail } from './script.js';
 
 // --- 2. 仮想リスト描画ロジック ---
 export default function renderVirtualList(filteredData) {
-    const ITEM_HEIGHT = 50; // CSSの.staff-itemの高さと合わせる
+    const ITEM_HEIGHT = 50;
     const VISIBLE_RANGE = 4; // 真ん中から上下に表示する個数
     const staffList = document.getElementById('staffList'); // 要素を明示的に取得
     
