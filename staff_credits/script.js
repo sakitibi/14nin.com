@@ -251,6 +251,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         searchInput.addEventListener('focus', () => {
+            if (!window.checked) {
+                filteredData = NotGraduationedData;
+            }
             staffList.style.display = 'block';
             renderVirtualList(filteredData);
         });
