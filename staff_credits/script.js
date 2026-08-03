@@ -214,6 +214,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (searchInput && staffDetail && noResult && staffList) {
         searchInput.addEventListener('input', () => {
+            const checkbox = document.getElementById("is_graduationed_view");
+            const checked = checkbox.checked;
+            if (!checked) {
+                noResult.style.display = 'none';
+                staffList.style.display = 'block';
+                staffList.scrollTop = 0;
+                renderVirtualList(NotGraduationedData);
+                return;
+            }
             const query = searchInput.value.trim().toLowerCase();
             staffDetail.style.display = 'none';
 
@@ -264,16 +273,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         allStaffDataCounter.textContent = allStaffDataLength;
     }
 });
-
-document.addEventListener("change", (e) => {
-    const checkbox = document.getElementById("is_graduationed_view");
-    const checked = checkbox.checked;
-    if (checked) {
-        renderVirtualList(NotGraduationedData);
-    } else {
-        renderVirtualList(filteredData);
-    }
-})
 
 // Botではない場合、隠しリストを削除する
 setInterval(() => {
