@@ -20,12 +20,17 @@ export const showDetail = (staff) => {
 
     if (!staffDetail || !staffList) return;
 
-    staffDetail.classList.remove('highlight-executive-detail', 'highlight-committee-detail');
+    staffDetail.classList.remove('highlight-executive-detail', 'highlight-committee-detail', 'highlight-graduationed-detail');
     
     if (staff.dept.includes("部長")) {
         staffDetail.classList.add('highlight-executive-detail');
     } else if (staff.dept && staff.dept.includes("委員長")) {
         staffDetail.classList.add('highlight-committee-detail');
+    }
+
+    if (staff.graduationed) {
+        staffDetail.classList.remove('highlight-executive-detail', 'highlight-committee-detail');
+        staffDetail.classList.add('highlight-graduationed-detail');
     }
 
     document.getElementById('detailId').textContent = staff.id;

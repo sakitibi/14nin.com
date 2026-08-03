@@ -36,8 +36,7 @@ export default function renderVirtualList(filteredData) {
         }
 
         if (staff.graduationed) {
-            li.classList.remove("highlight-executive");
-            li.classList.remove("highlight-committee");
+            li.classList.remove("highlight-executive", "highlight-committee");
             li.classList.add('highlight-graduationed');
         }
 
