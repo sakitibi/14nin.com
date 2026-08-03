@@ -169,6 +169,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const staffDetail = document.getElementById('staffDetail');
     const closeDetail = document.getElementById('closeDetail');
     const allStaffDataCounter = document.getElementById('allStaffDataCounter');
+    const checkbox = document.getElementById("is_graduationed_view");
+    const checked = checkbox.checked;
 
     const currentUrl = new URL(window.location.href);
     const targetId = currentUrl.searchParams.get("id");
@@ -214,8 +216,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (searchInput && staffDetail && noResult && staffList) {
         searchInput.addEventListener('input', () => {
-            const checkbox = document.getElementById("is_graduationed_view");
-            const checked = checkbox.checked;
             if (!checked) {
                 filteredData = NotGraduationedData;
             }
@@ -266,7 +266,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     if (allStaffDataCounter) {
-        allStaffDataCounter.textContent = allStaffDataLength;
+        if (checked) {
+            allStaffDataCounter.textContent = allStaffDataLength;
+        } else {
+            allStaffDataCounter.textContent = NotGraduationedDataLength;
+        }
     }
 });
 
