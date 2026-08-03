@@ -222,6 +222,20 @@ h2 {
     background-color: #f1f8e9; /* テキストボックス内も少し色を合わせる */
 }
 
+#staffDetail.highlight-graduationed-detail {
+    background-color: #f2f2f2; /* 薄い灰色 */
+    border-color: #cccccc;      /* ボーダーを強調 */
+}
+
+#staffDetail.highlight-graduationed-detail h3 {
+    color: #4b4b4b;            /* 見出しの色を変更 */
+    border-bottom-color: #e4e4e4;
+}
+
+#staffDetail.highlight-graduationed-detail .text-box {
+    background-color: #f9faf8; /* テキストボックス内も少し色を合わせる */
+}
+
 /* 区切り線 */
 .detail-divider {
     border: none;
