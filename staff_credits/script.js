@@ -60,6 +60,7 @@ export const showDetail = (staff) => {
     setOptionalSection('detailBirthday', staff.birthday);
     setOptionalSection('detailIntro', staff.intro);
     setOptionalSection('detailComment', staff.comment);
+    setOptionalSection('detailGraduationed', staff.graduationed);
 
     staffDetail.style.display = 'block';
     staffList.style.display = 'none';
