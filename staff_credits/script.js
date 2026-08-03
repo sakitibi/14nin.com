@@ -217,11 +217,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const checkbox = document.getElementById("is_graduationed_view");
             const checked = checkbox.checked;
             if (!checked) {
-                noResult.style.display = 'none';
-                staffList.style.display = 'block';
-                staffList.scrollTop = 0;
-                renderVirtualList(NotGraduationedData);
-                return;
+                filteredData = NotGraduationedData;
             }
             const query = searchInput.value.trim().toLowerCase();
             staffDetail.style.display = 'none';
