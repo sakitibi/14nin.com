@@ -224,9 +224,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (searchInput && staffDetail && noResult && staffList) {
         searchInput.addEventListener('input', () => {
-            if (!window.checked) {
-                filteredData = NotGraduationedData;
-            }
             const query = searchInput.value.trim().toLowerCase();
             staffDetail.style.display = 'none';
 
@@ -236,6 +233,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 filteredData = allStaffData.filter(staff => 
                     staff.name.includes(query) || staff.kana.includes(query)
                 );
+            }
+
+            if (!window.checked) {
+                filteredData = NotGraduationedData;
             }
 
             if (filteredData.length === 0) {
