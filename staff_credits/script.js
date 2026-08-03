@@ -4,7 +4,9 @@ import renderVirtualList from './renderVirtualList.js';
 let isBot = true;
 let allStaffData = []; 
 let filteredData = []; // 検索結果を含めた「現在表示すべき全データ」
+let NotGraduationedData = [];
 let allStaffDataLength = 0;
+let NotGraduationedDataLength = 0;
 
 if (typeof window === 'undefined') {
     isBot = true;
@@ -145,10 +147,12 @@ const dataInitializationPromise = (async () => {
                 ...JSON.parse(jsonStr4).staff_data,
                 ...JSON.parse(jsonStr5).staff_data
             ];
+            NotGraduationedData = allStaffData.filter(value => !value.graduationed);
         }
 
         filteredData = allStaffData;
         allStaffDataLength = allStaffData.length;
+        NotGraduationedDataLength = NotGraduationedData.length;
         return { success: true };
 
     } catch (error) {
@@ -260,6 +264,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         allStaffDataCounter.textContent = allStaffDataLength;
     }
 });
+
+document.addEventListener("change", (e) => {
+    const checkbox = document.getElementById("is_graduationed_view");
+    const checked = checkbox.checked;
+    if (checked) {
+        renderVirtualList(NotGraduationedData);
+    } else {
+        renderVirtualList(filteredData);
+    }
+})
 
 // Botではない場合、隠しリストを削除する
 setInterval(() => {
