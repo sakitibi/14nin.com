@@ -161,6 +161,15 @@ const dataInitializationPromise = (async () => {
     }
 })();
 
+function updateStaffCounter(allStaffDataCounter, checked) {
+    if (allStaffDataCounter) {
+        if (checked) {
+            allStaffDataCounter.textContent = allStaffDataLength;
+        } else {
+            allStaffDataCounter.textContent = NotGraduationedDataLength;
+        }
+    }
+}
 document.addEventListener('DOMContentLoaded', async () => {
     const searchInput = document.getElementById('searchInput');
     const staffList = document.getElementById('staffList');
@@ -265,19 +274,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    if (allStaffDataCounter) {
-        if (checked) {
-            allStaffDataCounter.textContent = allStaffDataLength;
-        } else {
-            allStaffDataCounter.textContent = NotGraduationedDataLength;
-        }
-    }
+    updateStaffCounter(allStaffDataCounter, false);
 });
 
 // Botではない場合、隠しリストを削除する
 setInterval(() => {
+    const checkbox = document.getElementById("is_graduationed_view");
+    const allStaffDataCounter = document.getElementById('allStaffDataCounter');
+    let checked = false;
+    if (checkbox) {
+        checked = checkbox.checked;
+    }
     const hiddenList = document.getElementById("staffList-hidden");
     if (!isBot && hiddenList) {
         hiddenList.remove();
+    }
+    if (allStaffDataCounter) {
+        updateStaffCounter(allStaffDataCounter, checked);
     }
 }, 50);
