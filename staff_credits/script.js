@@ -179,7 +179,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const closeDetail = document.getElementById('closeDetail');
     const allStaffDataCounter = document.getElementById('allStaffDataCounter');
     const checkbox = document.getElementById("is_graduationed_view");
-    const checked = checkbox.checked;
 
     const currentUrl = new URL(window.location.href);
     const targetId = currentUrl.searchParams.get("id");
@@ -225,7 +224,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (searchInput && staffDetail && noResult && staffList) {
         searchInput.addEventListener('input', () => {
-            if (!checked) {
+            if (!window.checked) {
                 filteredData = NotGraduationedData;
             }
             const query = searchInput.value.trim().toLowerCase();
@@ -284,6 +283,7 @@ setInterval(() => {
     let checked = false;
     if (checkbox) {
         checked = checkbox.checked;
+        window.checked = checked;
     }
     const hiddenList = document.getElementById("staffList-hidden");
     if (!isBot && hiddenList) {
