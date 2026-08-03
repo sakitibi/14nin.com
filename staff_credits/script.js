@@ -152,6 +152,15 @@ const dataInitializationPromise = (async () => {
         filteredData = allStaffData;
         allStaffDataLength = allStaffData.length;
         NotGraduationedData = allStaffData.filter(value => !value.graduationed);
+        if (isAdmin) {
+            const blob = new Blob([
+                new TextEncoder().encode(
+                    JSON.stringify(NotGraduationedData)
+                )
+            ], {type: "application/json"});
+            const url = URL.createObjectURL(blob);
+            console.log("NotGraduationedData: ", url);
+        }
         NotGraduationedDataLength = NotGraduationedData.length;
         return { success: true };
 
