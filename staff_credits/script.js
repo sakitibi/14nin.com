@@ -147,11 +147,11 @@ const dataInitializationPromise = (async () => {
                 ...JSON.parse(jsonStr4).staff_data,
                 ...JSON.parse(jsonStr5).staff_data
             ];
-            NotGraduationedData = allStaffData.filter(value => !value.graduationed);
+            
         }
-
         filteredData = allStaffData;
         allStaffDataLength = allStaffData.length;
+        NotGraduationedData = allStaffData.filter(value => !value.graduationed);
         NotGraduationedDataLength = NotGraduationedData.length;
         return { success: true };
 
