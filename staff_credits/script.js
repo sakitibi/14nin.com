@@ -147,8 +147,17 @@ const dataInitializationPromise = (async () => {
                 ...JSON.parse(jsonStr4).staff_data,
                 ...JSON.parse(jsonStr5).staff_data
             ];
-            
         }
+        const today = new Date();
+        today.setHours(23, 59, 59, 999);
+
+        // joinedが今日の日付以下のデータのみに絞り込む
+        allStaffData = allStaffData.filter(staff => {
+            if (!staff.joined) return true;
+            const joinedDate = new Date(staff.joined);
+            return joinedDate <= today;
+        });
+
         filteredData = allStaffData;
         allStaffDataLength = allStaffData.length;
         NotGraduationedData = allStaffData.filter(value => !value.graduationed);
