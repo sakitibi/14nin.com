@@ -148,13 +148,31 @@ const dataInitializationPromise = (async () => {
                 ...JSON.parse(jsonStr5).staff_data
             ];
         }
+
         const today = new Date();
         today.setHours(23, 59, 59, 999);
+        const parseJapaneseDate = (dateStr) => {
+            if (!dateStr) return null;
+            
+            const match = String(dateStr).match(/(\d{4})年(\d{1,2})月(\d{1,2})日/);
+            if (match) {
+                const [_, year, month, day] = match;
+                return new Date(Number(year), Number(month) - 1, Number(day));
+            }
+            
+            const d = new Date(dateStr);
+            return isNaN(d.getTime()) ? null : d;
+        };
 
         // joinedが今日の日付以下のデータのみに絞り込む
         allStaffData = allStaffData.filter(staff => {
-            if (!staff.joined) return true;
-            const joinedDate = new Date(staff.joined);
+            if (!staff.joined) return true; // joined が空の場合は表示
+
+            const joinedDate = parseJapaneseDate(staff.joined);
+            
+            // パースに失敗したデータは念のため残す（または除外する場合は false に変更）
+            if (!joinedDate) return true; 
+
             return joinedDate <= today;
         });
 
