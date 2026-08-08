@@ -132,7 +132,7 @@ const dataInitializationPromise = (async () => {
                 res5.arrayBuffer()
             ]);
 
-            const [jsonStr1, jsonStr2, jsonStr3, jsonStr4, jsonStr5] = Promise.all([
+            const [jsonStr1, jsonStr2, jsonStr3, jsonStr4, jsonStr5] = await Promise.all([
                 decompressBrotli(buf1),
                 decompressBrotli(buf2),
                 decompressBrotli(buf3),
