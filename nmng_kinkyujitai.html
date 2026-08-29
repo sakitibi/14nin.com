@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        name="description"
+        content="特定の荒らしによる無差別追い出し・BAN被害についての緊急告知・注意喚起ページ。2026年8月29日時点で配信上確認された被害は累計981人。"
+    >
+    <meta
+        name="author"
+        content="対策委員会・協力ボランティア"
+    >
+    <title>【緊急告知】特定の荒らしによる無差別追い出し・BAN被害について</title>
+    <link rel="stylesheet" href="https://sakitibi.github.io/elibrary-api/css/3a47df82-ea9b-b77b-8b8d-ec396d652e0e.min.css">
+</head>
+<body>
+    <div class="page">
+        <noscript>Javascriptを有効にして下さい!</noscript>
+        <p>準備中</p>
+    </div>
+    <script type="module">
+        import { decompressBrotli } from 'https://sakitibi.github.io/14nin.com/js/brotli.js';
+        import { decodeSEncode } from 'https://cdn.jsdelivr.net/npm/upack.js@1.0.75/dist/esm/sencode.mjs';
+
+        function decodeBase64Unicode(str) {
+            const bytes = Uint8Array.from(atob(str), c => c.charCodeAt(0));
+            return new TextDecoder().decode(bytes);
+        }
+
+        async function importPrivateKey(base64Key) {
+            const buffer = Uint8Array.from(atob(base64Key), c => c.charCodeAt(0));
+            return await crypto.subtle.importKey(
+                "pkcs8",
+                buffer,
+                { name: "ECDH", namedCurve: "P-256" },
+                true,
+                ["deriveKey", "deriveBits"]
+            );
+        }
+
+        document.addEventListener("DOMContentLoaded", async function(){
+            const page = document.querySelector(".page");
+
+            const res = await fetch("https://sakitibi.github.io/static.asakurawiki.com/data/nmng_kinkyu.json.br");
+            const buffer = await res.arrayBuffer();
+
+            const decompressed = JSON.parse(await decompressBrotli(new Uint8Array(buffer)));
+
+            const HTMLData = decodeBase64Unicode(decompressed.value);
+            const PrivateKey = await importPrivateKey(decompressed.key);
+
+            const decoded = await decodeSEncode(
+                HTMLData,
+                PrivateKey,
+                20,
+                true
+            );
+
+            //page.innerHTML = decoded;
+        });
+    </script>
+</body>
+</html>
