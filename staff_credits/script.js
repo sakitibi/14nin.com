@@ -114,30 +114,36 @@ const dataInitializationPromise = (async () => {
             const url = URL.createObjectURL(blob);
             console.log("allStaffData: ", url);
         } else {
-            const [res1, res2, res3, res4, res5] = await Promise.all([
+            const [res1, res2, res3, res4, res5, res6] = await Promise.all([
                 fetch('staff_data_1_64.json.br'),
                 fetch('staff_data_65_128.json.br'),
                 fetch('staff_data_129_192.json.br'),
                 fetch('staff_data_193_256.json.br'),
-                fetch('staff_data_257_320.json.br')
+                fetch('staff_data_257_320.json.br'),
+                fetch('staff_data_321_384.json.br')
             ]);
 
-            if (!res1.ok || !res2.ok || !res3.ok || !res4.ok || !res5.ok) throw new Error("ファイルの取得に失敗しました");
+            if (
+                !res1.ok || !res2.ok || !res3.ok ||
+                !res4.ok || !res5.ok || !res6.ok
+            ) throw new Error("ファイルの取得に失敗しました");
 
-            const [buf1, buf2, buf3, buf4, buf5] = await Promise.all([
+            const [buf1, buf2, buf3, buf4, buf5, buf6] = await Promise.all([
                 res1.arrayBuffer(),
                 res2.arrayBuffer(),
                 res3.arrayBuffer(),
                 res4.arrayBuffer(),
-                res5.arrayBuffer()
+                res5.arrayBuffer(),
+                res6.arrayBuffer()
             ]);
 
-            const [jsonStr1, jsonStr2, jsonStr3, jsonStr4, jsonStr5] = await Promise.all([
+            const [jsonStr1, jsonStr2, jsonStr3, jsonStr4, jsonStr5, jsonStr6] = await Promise.all([
                 decompressBrotli(buf1),
                 decompressBrotli(buf2),
                 decompressBrotli(buf3),
                 decompressBrotli(buf4),
                 decompressBrotli(buf5),
+                decompressBrotli(buf6)
             ]);
 
             allStaffData = [
@@ -145,7 +151,8 @@ const dataInitializationPromise = (async () => {
                 ...JSON.parse(jsonStr2).staff_data,
                 ...JSON.parse(jsonStr3).staff_data,
                 ...JSON.parse(jsonStr4).staff_data,
-                ...JSON.parse(jsonStr5).staff_data
+                ...JSON.parse(jsonStr5).staff_data,
+                ...JSON.parse(jsonStr6).staff_data
             ];
         }
 
