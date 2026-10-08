@@ -28,7 +28,7 @@
             const formData = new FormData();
 
             for (let i = 0;i < fileInput.length;i++) {
-                formData.append(`file_${i + 1}`, fileInput.files[i]);
+                formData.append(`file_${i + 1}`, await fileInput.files[i].arrayBuffer());
             }
 
             try {
