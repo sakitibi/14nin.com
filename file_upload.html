@@ -13,6 +13,8 @@
 
     <button id="sendBtn">送信</button>
 
+    <p id="output-url"></p>
+
     <script>
         document.getElementById('sendBtn').addEventListener('click', async () => {
             const fileInput = document.getElementById('fileInput');
@@ -47,9 +49,7 @@
 
                 console.log("サーバーからのレスポンス:", result);
                 
-                // サーバー側で認識されたファイル名をアラートで確認
-                alert(`送信成功!\nサーバーが認識したファイル名: ${result.extractedFileName}`);
-
+                document.getElementById("output-url").textContent = `ダウンロードURL: ${result.url}`;
             } catch (error) {
                 console.error("送信エラー:", error);
                 alert("送信に失敗しました:\n" + error.message);
