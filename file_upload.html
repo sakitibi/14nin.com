@@ -9,7 +9,7 @@
     <h2>ファイルアップローダー</h2>
     
     <label for="fileInput">アップロードするファイルを選択してください（どんな名前でも自動認識されます）:</label><br>
-    <input type="file" id="fileInput"><br><br>
+    <input type="file" id="fileInput" multiple><br><br>
 
     <button id="sendBtn">送信</button>
 
@@ -25,11 +25,13 @@
             // 3. FormDataオブジェクトを作成
             const formData = new FormData();
 
-            formData.append("file_1", fileInput.files[0]);
+            for (let i = 0;i < fileInput.length;i++) {
+                formData.append(`file_${i + 1}`, fileInput.files[i]);
+            }
 
             try {
                 console.log("送信中...");
-                const response = await fetch('https://asakura-wiki.vercel.app/api/filenow', {
+                const response = await fetch('https://asakura-wiki.vercel.app/api/unzip/filenow_up', {
                     method: 'POST',
                     body: formData,
                 });
