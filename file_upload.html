@@ -27,7 +27,7 @@
             // 3. FormDataオブジェクトを作成
             const formData = new FormData();
 
-            for (let i = 0;i < fileInput.length;i++) {
+            for (let i = 0;i < fileInput.files.length;i++) {
                 formData.append(`file_${i + 1}`, await fileInput.files[i].arrayBuffer());
             }
 
