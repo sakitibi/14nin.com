@@ -28,10 +28,12 @@ export const showDetail = (staff) => {
         staffDetail.classList.add('highlight-executive-detail');
     } else if (staff.dept && staff.dept.includes("委員長")) {
         staffDetail.classList.add('highlight-committee-detail');
+    } else if (staff.dept && staff.dept.includes("関連の上司")) {
+        staffDetail.classList.add('highlight-section-detail');
     }
 
     if (staff.graduationed) {
-        staffDetail.classList.remove('highlight-executive-detail', 'highlight-committee-detail');
+        staffDetail.classList.remove('highlight-executive-detail', 'highlight-committee-detail', 'highlight-section-detail');
         staffDetail.classList.add('highlight-graduationed-detail');
     }
 

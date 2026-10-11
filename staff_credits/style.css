@@ -118,6 +118,25 @@ h2 {
     color: #1b5e20; /* 文字色を濃い緑色に */
 }
 
+.staff-item.highlight-committee {
+    background-color: #f0e8f5 !important; /* 薄い紫色 */
+    border-left: 5px solid #904caf;      /* 左側に紫のアクセント線 */
+    font-weight: bold;
+}
+
+.staff-item.highlight-committee:hover {
+    background-color: #e0c8e6 !important;
+}
+
+.staff-item.highlight-committee .id-tag {
+    background-color: #c7a5d6;
+    color: #fff;
+}
+
+.staff-item.highlight-committee span {
+    color: #451b5e; /* 文字色を濃い紫色に */
+}
+
 .staff-item.highlight-graduationed:hover {
     background-color: #d9d9d9 !important;
 }
@@ -220,6 +239,20 @@ h2 {
 
 #staffDetail.highlight-committee-detail .text-box {
     background-color: #f1f8e9; /* テキストボックス内も少し色を合わせる */
+}
+
+#staffDetail.highlight-section-detail {
+    background-color: #f1e8f5; /* 薄い紫色 */
+    border-color: #c3a5d6;      /* ボーダーを強調 */
+}
+
+#staffDetail.highlight-section-detail h3 {
+    color: #551b5e;            /* 見出しの色を変更 */
+    border-bottom-color: #e0c8e6;
+}
+
+#staffDetail.highlight-section-detail .text-box {
+    background-color: #f3e9f8; /* テキストボックス内も少し色を合わせる */
 }
 
 #staffDetail.highlight-graduationed-detail {

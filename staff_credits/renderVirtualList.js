@@ -33,10 +33,12 @@ export default function renderVirtualList(filteredData) {
             li.classList.add('highlight-executive');
         } else if (staff.dept.includes("委員長")) {
             li.classList.add('highlight-committee');
+        } else if (staff.dept.includes("関連の上司")) {
+            li.classList.add('highlight-section');
         }
 
         if (staff.graduationed) {
-            li.classList.remove("highlight-executive", "highlight-committee");
+            li.classList.remove("highlight-executive", "highlight-committee", "highlight-section");
             li.classList.add('highlight-graduationed');
         }
 
