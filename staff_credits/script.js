@@ -22,7 +22,7 @@ export const showDetail = (staff) => {
 
     if (!staffDetail || !staffList) return;
 
-    staffDetail.classList.remove('highlight-executive-detail', 'highlight-committee-detail', 'highlight-graduationed-detail');
+    staffDetail.classList.remove('highlight-executive-detail', 'highlight-committee-detail', 'highlight-section-detail', 'highlight-graduationed-detail');
     
     if (staff.dept.includes("部長")) {
         staffDetail.classList.add('highlight-executive-detail');
