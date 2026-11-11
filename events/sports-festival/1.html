@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#e85d24">
+<title>14ninstudio 大体育祭 公式案内 | SPORTS FESTIVAL</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="#" class="logo">SPORTS FESTIVAL</a>
+        <nav>
+            <a href="#about">開催概要</a>
+            <a href="#teams">チーム分け</a>
+            <a href="#roles">役割</a>
+            <a href="#program">プログラム</a>
+            <a href="#rules">注意事項</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-label">OFFICIAL EVENT INFORMATION</div>
+        <h1 style="white-space: nowrap;">
+            14ninstudio 大体育祭
+            <span>SPORTS FESTIVAL</span>
+        </h1>
+        <p class="hero-description">
+            全力で挑み、仲間とつなぐ。
+            <br>
+            それぞれの力を一つにする特別な一日。
+        </p>
+        <div class="hero-date">開催日：2026年 11月 23日</div>
+    </div>
+</section>
+
+<section class="container" id="about">
+    <div class="section-heading">
+        <div class="en">EVENT INFORMATION</div>
+        <h2>開催概要</h2>
+        <p>14ninstudio 大体育祭の基本情報をご案内します。</p>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <div class="label">開催日時</div>
+            <div class="value">2026年 11月 23日</div>
+        </div>
+        <div class="info-card">
+            <div class="label">開催時間</div>
+            <div class="value">08:30 ～ 15:30</div>
+        </div>
+        <div class="info-card">
+            <div class="label">主催</div>
+            <div class="value">イベント事業部</div>
+        </div>
+        <div class="info-card">
+            <div class="label">参加対象</div>
+            <div class="value">全社員</div>
+        </div>
+        <div class="info-card">
+            <div class="label">競技方式</div>
+            <div class="value">部署対抗戦</div>
+        </div>
+    </div>
+
+    <div class="notice">
+        <strong>開催について</strong>
+        <p>
+            天候や会場の状況によって、プログラムの変更・中断・延期を行う場合があります。
+        </p>
+    </div>
+</section>
+
+
+<section class="container" id="teams">
+    <div class="section-heading">
+        <div class="en">DEPARTMENT INTRODUCTION</div>
+        <h2>組織・部門紹介</h2>
+        <p>体育祭に参加する全11部門</p>
+    </div>
+
+    <div class="team-slider-wrapper">
+        <button class="team-arrow prev" onclick="moveTeam(-1)" aria-label="前へ">‹</button>
+
+        <div class="team-slider" id="teamSlider">
+            <div class="team red">
+                <div class="team-color"></div>
+                <h3>総務部</h3>
+                <p>RED TEAM</p>
+            </div>
+            <div class="team lime">
+                <div class="team-color"></div>
+                <h3>開発部</h3>
+                <p>LIME TEAM</p>
+            </div>
+            <div class="team blue">
+                <div class="team-color"></div>
+                <h3>保守運用部</h3>
+                <p>BLUE TEAM</p>
+            </div>
+            <div class="team purple">
+                <div class="team-color"></div>
+                <h3>情報セキュリティ部</h3>
+                <p>PURPLE TEAM</p>
+            </div>
+            <div class="team sky">
+                <div class="team-color"></div>
+                <h3>ゲーム実況部</h3>
+                <p>SKY TEAM</p>
+            </div>
+            <div class="team green">
+                <div class="team-color"></div>
+                <h3>広報委員会</h3>
+                <p>GREEN TEAM</p>
+            </div>
+            <div class="team yellow">
+                <div class="team-color"></div>
+                <h3>人事部</h3>
+                <p>YELLOW TEAM</p>
+            </div>
+            <div class="team pink">
+                <div class="team-color"></div>
+                <h3>名前は長い方が有利<br>対策委員会</h3>
+                <p>PINK TEAM</p>
+            </div>
+            <div class="team orange">
+                <div class="team-color"></div>
+                <h3>法務委員会</h3>
+                <p>ORANGE TEAM</p>
+            </div>
+            <div class="team white">
+                <div class="team-color"></div>
+                <h3>営業部</h3>
+                <p>WHITE TEAM</p>
+            </div>
+            <div class="team gray">
+                <div class="team-color"></div>
+                <h3>経理部</h3>
+                <p>GRAY TEAM</p>
+            </div>
+        </div>
+
+        <button class="team-arrow next" onclick="moveTeam(1)" aria-label="次へ">›</button>
+    </div>
+
+    <div class="team-pagination">
+        <span id="teamCurrent">01</span>
+        <div class="team-progress">
+            <div id="teamProgress"></div>
+        </div>
+        <span>11</span>
+    </div>
+</section>
+
+<section class="container" id="roles">
+    <div class="section-heading">
+        <div class="en">STAFF ROLES</div>
+        <h2>役割・担当業務</h2>
+        <p>各担当が連携して体育祭を運営します。</p>
+    </div>
+
+    <div class="role-grid">
+        <div class="role-card">
+            <h3>イベント事業部長</h3>
+            <p>大体育祭全体の統括、重要事項の判断、各部門への指示を行います。</p>
+        </div>
+        <div class="role-card">
+            <h3>イベント事業副部長</h3>
+            <p>部長を補佐し、各部門の進捗確認や運営上の調整を行います。</p>
+        </div>
+    </div>
+
+    <div class="notice">
+        ※係の人数や配置は参加人数、会場規模に応じて調整します。
+        安全管理や救護については部長等の責任者と連携します。
+    </div>
+</section>
+
+<section class="container" id="program">
+    <div class="section-heading">
+        <div class="en">EVENT PROGRAM</div>
+        <h2>当日プログラム</h2>
+        <p>当日の進行予定です。時間は変更される場合があります。</p>
+    </div>
+
+    <table class="program-table">
+        <thead>
+            <tr>
+                <th>時刻</th>
+                <th>内容</th>
+                <th>区分</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="time">08:00</td>
+                <td>運営スタッフ集合・最終準備</td>
+                <td><span class="category">運営</span></td>
+            </tr>
+            <tr>
+                <td class="time">08:30</td>
+                <td>開場・参加者受付</td>
+                <td><span class="category">受付</span></td>
+            </tr>
+            <tr>
+                <td class="time">08:50</td>
+                <td>開会式・開会宣言</td>
+                <td><span class="category">式典</span></td>
+            </tr>
+            <tr>
+                <td class="time">09:00</td>
+                <td>選手代表宣誓・競技上の注意</td>
+                <td><span class="category">式典</span></td>
+            </tr>
+            <tr>
+                <td class="time">09:15</td>
+                <td>準備体操</td>
+                <td><span class="category">全体</span></td>
+            </tr>
+            <tr>
+                <td class="time">09:30</td>
+                <td>100m走</td>
+                <td><span class="category">個人競技</span></td>
+            </tr>
+            <tr>
+                <td class="time">10:00</td>
+                <td>障害物競走</td>
+                <td><span class="category">個人競技</span></td>
+            </tr>
+            <tr>
+                <td class="time">10:30</td>
+                <td>大縄跳び</td>
+                <td><span class="category">団体競技</span></td>
+            </tr>
+            <tr>
+                <td class="time">11:00</td>
+                <td>部署別5000mリレー</td>
+                <td><span class="category">リレー</span></td>
+            </tr>
+            <tr>
+                <td class="time">11:40</td>
+                <td>午前の部終了・休憩</td>
+                <td><span class="category">休憩</span></td>
+            </tr>
+            <tr>
+                <td class="time">12:00</td>
+                <td>昼食</td>
+                <td><span class="category">休憩</span></td>
+            </tr>
+            <tr>
+                <td class="time">13:00</td>
+                <td>満水リレー</td>
+                <td><span class="category">団体競技</span></td>
+            </tr>
+            <tr>
+                <td class="time">13:30</td>
+                <td>渦巻きリレー</td>
+                <td><span class="category">団体競技</span></td>
+            </tr>
+            <tr>
+                <td class="time">14:00</td>
+                <td>玉入れ</td>
+                <td><span class="category">団体競技</span></td>
+            </tr>
+            <tr>
+                <td class="time">14:30</td>
+                <td>全員リレー</td>
+                <td><span class="category">リレー</span></td>
+            </tr>
+            <tr>
+                <td class="time">15:00</td>
+                <td>閉会式・成績発表・表彰</td>
+                <td><span class="category">式典</span></td>
+            </tr>
+            <tr>
+                <td class="time">15:30</td>
+                <td>解散</td>
+                <td><span class="category">終了</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="notice">
+        <strong>プログラムについて</strong>
+        <p>
+            各競技の参加人数や進行状況により、開始時刻が前後する場合があります。
+            競技の順番や内容の変更は、放送によってお知らせします。
+        </p>
+    </div>
+</section>
+
+<section class="container" id="score">
+    <div class="section-heading">
+        <div class="en">POINT SYSTEM</div>
+        <h2>得点・順位管理</h2>
+        <p>各競技の成績を集計し、総合優勝を決定します。</p>
+    </div>
+
+    <div class="score-grid">
+        <div class="score-card">
+            <h3>総務部</h3>
+            <p>RED TEAM</p>
+            <div class="score-value">---</div>
+            <p>点</p>
+        </div>
+        <div class="score-card">
+            <h3>開発部</h3>
+            <p>LIME TEAM</p>
+            <div class="score-value">---</div>
+            <p>点</p>
+        </div>
+        <div class="score-card">
+            <h3>保守運用部</h3>
+            <p>BLUE TEAM</p>
+            <div class="score-value">---</div>
+            <p>点</p>
+        </div>
+        <div class="score-card">
+            <h3>情報セキュリティ部</h3>
+            <p>PURPLE TEAM</p>
+            <div class="score-value">---</div>
+            <p>点</p>
+        </div>
+        <div class="score-card">
+            <h3>ゲーム実況部</h3>
+            <p>SKY TEAM</p>
+            <div class="score-value">---</div>
+            <p>点</p>
+        </div>
+        <div class="score-card">
+            <h3>広報委員会</h3>
+            <p>GREEN TEAM</p>
+            <div class="score-value">---</div>
+            <p>点</p>
+        </div>
+        <div class="score-card">
+            <h3>人事部</h3>
+            <p>YELLOW TEAM</p>
+            <div class="score-value">---</div>
+            <p>点</p>
+        </div>
+        <div class="score-card">
+            <h3>名前は長い方が有利対策委員会</h3>
+            <p>PINK TEAM</p>
+            <div class="score-value">---</div>
+            <p>点</p>
+        </div>
+        <div class="score-card">
+            <h3>法務委員会</h3>
+            <p>ORANGE TEAM</p>
+            <div class="score-value">---</div>
+            <p>点</p>
+        </div>
+        <div class="score-card">
+            <h3>営業部</h3>
+            <p>WHITE TEAM</p>
+            <div class="score-value">---</div>
+            <p>点</p>
+        </div>
+        <div class="score-card">
+            <h3>経理部</h3>
+            <p>GRAY TEAM</p>
+            <div class="score-value">---</div>
+            <p>点</p>
+        </div>
+    </div>
+
+    <div class="notice">
+        <strong>得点について</strong>
+        <p>
+            各競技の順位に応じて得点を付与します。
+            得点配分、同点時の順位決定方法、失格時の扱いは、
+            事前に定めた競技規則に従います。
+            最終結果は閉会式で発表します。
+        </p>
+    </div>
+</section>
+
+<section class="container" id="awards">
+    <div class="section-heading">
+        <div class="en">AWARDS</div>
+        <h2>表彰内容</h2>
+        <p>競技や活動の成果を表彰します。</p>
+    </div>
+
+    <div class="role-grid">
+        <div class="role-card">
+            <h3>総合優勝</h3>
+            <p>全競技の合計得点が最も高い部署に授与します。</p>
+        </div>
+        <div class="role-card">
+            <h3>総合準優勝</h3>
+            <p>総合得点が2位となった部署に授与します。</p>
+        </div>
+        <div class="role-card">
+            <h3>応援賞</h3>
+            <p>応援合戦や応援活動の審査結果に基づいて授与します。</p>
+        </div>
+        <div class="role-card">
+            <h3>競技優秀賞</h3>
+            <p>特定の競技で優れた成績を収めた組などを表彰します。</p>
+        </div>
+    </div>
+</section>
+
+<section class="container" id="rules">
+    <div class="section-heading">
+        <div class="en">IMPORTANT INFORMATION</div>
+        <h2>注意事項・参加ルール</h2>
+        <p>安全で円滑な体育祭の実施にご協力ください。</p>
+    </div>
+
+    <div class="rules">
+        <div class="rule">
+            <h3>競技参加について</h3>
+            <p>
+                競技のルールや係員の指示に従ってください。
+                無理な参加はせず、体調に合わせて行動してください。
+            </p>
+        </div>
+        <div class="rule">
+            <h3>服装・持ち物</h3>
+            <p>
+                運動に適した服装と運動靴を着用してください。
+                水分補給用の飲み物や必要な持ち物を準備してください。
+            </p>
+        </div>
+        <div class="rule">
+            <h3>熱中症対策</h3>
+            <p>
+                こまめな水分補給と休憩を行ってください。
+                暑さ指数や気象状況に応じて競技を変更・中止します。
+            </p>
+        </div>
+        <div class="rule">
+            <h3>会場内の行動</h3>
+            <p>
+                競技エリアへの無断立ち入りは禁止です。
+                通路や緊急車両の進入経路をふさがないでください。
+            </p>
+        </div>
+        <div class="rule">
+            <h3>応援・観覧</h3>
+            <p>
+                他の部署への敬意を忘れず、節度ある応援をお願いします。
+                危険な行為や相手を傷つける言動は禁止です。
+            </p>
+        </div>
+        <div class="rule">
+            <h3>用具・設備</h3>
+            <p>
+                競技用具や会場設備を大切に扱ってください。
+                異常を発見した場合は係員に報告してください。
+            </p>
+        </div>
+        <div class="rule">
+            <h3>ゴミ・清掃</h3>
+            <p>
+                ゴミは指定された場所に分別して捨ててください。
+                使用した場所はきれいに片付けてください。
+            </p>
+        </div>
+    </div>
+
+    <div class="emergency">
+        <h3>緊急時・体調不良時の対応</h3>
+        <p>
+            体調不良、けが、事故などが発生した場合は、
+            速やかに近くの教職員または救護担当者に知らせてください。
+        </p>
+        <p>
+            緊急時は競技を中断し、会場責任者の指示に従ってください。
+            自分だけで判断せず、必ず担当者に連絡してください。
+        </p>
+    </div>
+</section>
+
+<section class="container" id="weather">
+    <div class="section-heading">
+        <div class="en">WEATHER INFORMATION</div>
+        <h2>雨天・荒天時の対応</h2>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <div class="value">通常開催</div>
+            <p>安全が確認できる場合は予定どおり開催します。</p>
+        </div>
+        <div class="info-card">
+            <div class="value">一部変更</div>
+            <p>天候に応じて競技内容や実施順序を変更します。</p>
+        </div>
+        <div class="info-card">
+            <div class="value">中止・延期</div>
+            <p>荒天や安全確保が困難な場合は中止・延期します。</p>
+        </div>
+    </div>
+</section>
+
+<section class="container" id="closing">
+    <div class="section-heading">
+        <div class="en">MESSAGE</div>
+        <h2>大体育祭に向けて</h2>
+    </div>
+
+    <div class="notice">
+        <p>
+            体育祭は、参加者全員で作り上げる大切な行事です。
+            競技に全力で取り組むことはもちろん、
+            仲間との協力や相手への思いやりも大切にしましょう。
+        </p>
+        <p>
+            それぞれの力を発揮し、
+            思い出に残る体育祭にしましょう。
+        </p>
+        <strong>皆さんのご参加をお待ちしています。</strong>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="footer-title">SPORTS FESTIVAL</div>
+    <p>14ninstudio 大体育祭公式案内ページ</p>
+    <p>主催：イベント事業部</p>
+    <div class="copyright">
+        Copyright 2026 14ninstudio, Inc. All Rights Reserved.
+    </div>
+</footer>
+<script src="script.min.js"></script>
+</body>
+</html>
